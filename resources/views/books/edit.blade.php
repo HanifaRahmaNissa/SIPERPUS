@@ -49,10 +49,10 @@
                             <x-select-input id="bookshelf" name="bookshelf_id" class="mt-1 block w-full" required>
                                 <option value="">Open this select menu</option>
                                 @foreach ($bookshelves as $key => $value)
-                                    @if (old('bookshelf_id', $book->bookshelf_id) == $key)
-                                        <option value="{{ $key }}" selected>{{ $value }}</option>
+                                    @if (old('bookshelf_id' == $book->bookshelf_id) == $value->id)
+                                        <option value="{{ $value->id }}" selected>{{ $value->code.' - '.$value->name }}</option>
                                     @else
-                                        <option value="{{ $key }}">{{ $value }}</option>
+                                        <option value="{{ $value->id }}" selected>{{ $value->code.' - '.$value->name }}</option>
                                     @endif
                                 @endforeach
                             </x-select-input>
